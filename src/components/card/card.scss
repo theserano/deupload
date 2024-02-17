@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+
+.small_card{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 9px 11px 15px -3px rgba(0,0,0,0.1);
+
+    .small_card_circle{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pad: 1rem;
+
+        img{
+            width: 40px;
+        }
+    }
+
+    .small_card_header{
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    .small_card_text{
+        font-size: .9rem;
+        margin-top: -1.3rem;
+    }
+    .small_card_link{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: .9rem;
+    }
+}

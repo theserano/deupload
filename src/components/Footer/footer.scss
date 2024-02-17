@@ -1,0 +1,112 @@
+@import "../../styles/variables.scss";
+
+
+.footer{
+    background-color: $footer-blue;
+
+    .footer_container{
+        color: $white;
+
+        .footer_top{
+            display: grid;
+            grid-template-columns: 30% 70%;
+
+            .footer_what_is{
+
+                p{
+                    color: $white;
+                }
+
+                .what_is_images{
+                    margin-top: 2rem;
+
+                    img{
+                        width: 40px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            .footer_details{
+
+                .footer_details_each{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+
+                    h3{
+                        font-weight: 600;
+                    }
+                    ul{
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5rem;
+
+                        li{
+                            font-weight: 300;
+                            font-size: .9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .footer{
+        .footer_container{
+            .footer_top{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                .footer_what_is{
+                    gap: 1rem;
+
+                    .what_is_images{
+                        margin-top: -.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer{
+        .footer_container{
+            .footer_top{
+                .footer_details{
+                    .footer_details_each{
+                        display: flex;
+                        gap: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer{
+        .footer_container{
+            .footer_top{
+                .footer_details{
+                    flex-direction: column;
+                    gap: 2rem;
+                    .footer_details_each{
+                        display: flex;
+                        gap: 1rem;
+                    }
+                }
+            }
+            .footer_down{
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    }
+}

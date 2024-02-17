@@ -1,0 +1,51 @@
+@import "../../styles/variables.scss";
+
+.textHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 5rem;
+    padding: 2rem;
+
+    h1{
+        width: 55rem;
+        text-align: center;
+        line-height: 1;
+    }
+
+    p{
+        text-align: center;
+        width: 40rem;
+        font-size: .9rem;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .textHeader{
+        h1{
+            width: 45rem;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .textHeader {
+        h1{
+            width: 35rem;
+        }
+        p{
+            width: 20rem;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .textHeader{
+        h1{
+            width: 20rem;
+        }
+    }
+}
