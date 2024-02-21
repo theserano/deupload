@@ -61,7 +61,8 @@ img{
 
 .card_helper{
     border-radius: 20px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 2rem;
     display: flex;
     gap: 3rem;
@@ -84,9 +85,14 @@ img{
 
 
 // media queries
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .h1_header{
         font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .h1_header{
+        font-size: 2.2rem;
     }
 }
 

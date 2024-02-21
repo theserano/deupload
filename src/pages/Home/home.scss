@@ -51,6 +51,7 @@
 
 .lightweight_header{
     padding: 5rem;
+    text-align: center;
 }
 
 .lightweight_small_cards{
@@ -87,12 +88,83 @@
 .t_collab{
     background-color: $light-purple;
     width: 1200px;
+    margin-bottom: 20rem;
     box-shadow: -3px -3px 15px -3px rgba(0,0,0,0.1),3px 3px 15px -3px rgba(0,0,0,0.1);
     .t_collab_text{
         width: 45%;
     }
     .t_collab_image{
         width: 45%;
+    }
+}
+
+.decentralized{
+    p{
+        font-size: .9rem;
+    }
+    .decentralized_text{
+        width: 600px;
+
+        &_down{
+            &_each{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                &_image{
+                    &_first, &_second{
+                        width: 3rem;
+                        height: 3rem;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    &_first{
+                        background-color: #00E5FF;
+                    }
+                    &_second{
+                        background-color: #34D399;
+                    }
+                }
+                h3{
+                    font-weight: 600;
+                }
+                &_p{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: .5rem;
+                    font-weight: 500;
+                }
+            }
+        }
+
+    }
+    .decentralized_cards{
+        width: 500px;
+        
+        .decentralized_cards_each{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0px 5px 11px -3px rgba(0,0,0,0.1),5px 0px 11px -7px rgba(0,0,0,0.1);
+
+            &_image{
+                width: 8rem;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            div{
+                h2{
+                    font-weight: 600;
+                }
+            }
+        }
     }
 }
 
@@ -108,6 +180,18 @@
     .lightweight_small_cards{
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .decentralized{
+        gap: 1rem;
+        .decentralized_text{
+            width: 400px;
+        }
+        .decentralized_cards{
+            width: 400px;
+        }
     }
 }
 
@@ -136,6 +220,15 @@
             width: 400px;
             height: 500px;
         }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .decentralized{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
     }
 }
 
@@ -172,6 +265,20 @@
         .lightweight_small_cards_first, .lightweight_small_cards_second{
             width: 300px;
             height: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    .decentralized{
+        p{
+            font-size: .8rem;
+        }
+        .decentralized_text{
+            width: 300px;
+        }
+        .decentralized_cards{
+            width: 300px;
         }
     }
 }

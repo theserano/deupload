@@ -8,6 +8,12 @@ import keyHole from "../../assets/home/keyhole.svg";
 import home_file_sharing from "../../assets/home/file_sharing.svg";
 import collect_files from "../../assets/home/file_sharing.svg";
 import t_collab from "../../assets/home/Group 232.svg";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import hardDrive from "../../assets/home/hard-drive.svg";
+import leaf from "../../assets/home/leaf.svg"
+import doorOpen from "../../assets/home/door-open.svg";
+import shieldCheck from "../../assets/home/shield-check .svg"
+import code from "../../assets/home/code.svg";
 
 
 const NavLink = lazy(() => import("../../components/NavLink/NavLink"));
@@ -118,6 +124,71 @@ const Home = () => {
             <img src={t_collab} alt="t_collab" />
           </div>
          </div>
+
+         <section className="decentralized flex flex-row item-center justify-center gap-16 container mx-auto">
+
+          <article className="decentralized_text flex flex-col gap-20">
+
+            <div className="decentralized_text_top">
+              <h1 className="h1_header">Decentralized storage built for <span className="purple_text">better privacy</span>.</h1>
+              <p>Store data securely on over 13k nodes worldwide instead of just a few vulnerable data centers with privacy. Every file is encrypted, split into pieces, and stored on a global network of nodes, making data breaches and downtime a thing of the past.</p>
+            </div>
+            <div className="decentralized_text_down flex flex-row gap-8">
+              <div className="decentralized_text_down_each">
+                <div className="decentralized_text_down_each_image_first">
+                  <img src={hardDrive} alt="stuff" />
+                </div>
+                <h3>Upgrade your storage.</h3>
+                <p>Better security, performance and cost, Deupload is the better way to store data.</p>
+                <p className="decentralized_text_down_each_p" style={{
+                  color: "#00E5FF"
+                }}>learn use cases <IoIosArrowRoundForward /></p>
+              </div>
+              <div className="decentralized_text_down_each">
+                <div className="decentralized_text_down_each_image_second">
+                  <img src={leaf} alt="stuff" />
+                </div>
+                <h3>Carbon neutral storage.</h3>
+                <p>Utilizing existing unused storage capacity on recycled hardware around the world.</p>
+                <p className="decentralized_text_down_each_p" style={{
+                  color: "#34D399"
+                }}>learn use cases <IoIosArrowRoundForward /></p>
+              </div>
+            </div>
+
+          </article>
+
+          <article className="decentralized_cards flex flex-col justify-center items-center gap-4">
+            <div className="decentralized_cards_each">
+              <div className="decentralized_cards_each_image">
+                <img src={doorOpen} alt="stuff" />
+              </div>
+              <div>
+                <h2>Private by design</h2>
+                <p>We believe data privacy is a human right, which is why Deupload is built on a decentralized architecture that makes data breaches a thing of the past.</p>
+              </div>
+            </div>
+            <div className="decentralized_cards_each">
+            <div className="decentralized_cards_each_image">
+              <img src={shieldCheck} alt="stuff" />
+            </div>
+              <div>
+                <h2>Distributed network</h2>
+                <p>An object is never in one place. Data is split into 80 pieces, and distributed to uncorrelated Nodes. When you call for the data, it is automatically reconstituted in an instant.</p>
+              </div>
+            </div>
+            <div className="decentralized_cards_each">
+            <div className="decentralized_cards_each_image">
+              <img src={code} alt="stuff" />
+            </div>
+              <div>
+                <h2>Worldwide availability</h2>
+                <p>Data is stored on Nodes that are selected by reputation and local latency. The fastest Nodes from this set are chosen to store pieces, ensuring quick access to your data.</p>
+              </div>
+            </div>
+          </article>
+
+         </section>
 
         <Footer />
     </div>
