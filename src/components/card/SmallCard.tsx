@@ -12,13 +12,15 @@ interface SmallCardProps {
     textColor: string
     link?: string
     linkColor?: string
+    height?: string
 }
 
 
-const SmallCard = ({backgroundColor, circleColor, image, header, headerColor, text, textColor, link, linkColor}: SmallCardProps) => {
+const SmallCard = ({backgroundColor, circleColor, image, header, headerColor, text, textColor, link, linkColor, height}: SmallCardProps) => {
   return (
     <div className="small_card" style={{
-        backgroundColor: backgroundColor
+        backgroundColor: backgroundColor,
+        height: height
     }}>
 
         <div className="small_card_circle" style={{

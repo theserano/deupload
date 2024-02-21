@@ -10,7 +10,8 @@
     gap: 2rem;
     border-radius: 10px;
     padding: 2rem;
-    box-shadow: 9px 11px 15px -3px rgba(0,0,0,0.1);
+    transition: $transition;
+    box-shadow: 0px 0px 50px -8px rgba(0,0,0,0.1);
 
     .small_card_circle{
         width: 60px;
@@ -42,4 +43,9 @@
         align-items: flex-end;
         font-size: .9rem;
     }
+}
+
+.small_card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0px 80px 34px -54px rgba( $purple ,0.6);
 }

@@ -24,10 +24,18 @@
 .home_header_picture{
     width: 60%;
     margin: auto;
-
+    
     img{
+        animation: header_picture_blur 3s ease-in-out infinite;
         max-width: 100%;
     }
+}
+@keyframes header_picture_blur {
+    0%{filter: blur(0px);}
+    25%{filter: blur(1px);}
+    50%{filter: blur(2px);}
+    75%{filter: blur(1px);}
+    100%{filter: blur(0px);}
 }
 
 
@@ -99,6 +107,7 @@
 }
 
 .decentralized{
+    margin-bottom: 10rem;
     p{
         font-size: .9rem;
     }
@@ -151,6 +160,8 @@
             gap: 2rem;
             padding: 2rem;
             border-radius: 20px;
+            cursor: default;
+            transition: $transition;
             box-shadow: 0px 5px 11px -3px rgba(0,0,0,0.1),5px 0px 11px -7px rgba(0,0,0,0.1);
 
             &_image{
@@ -160,19 +171,148 @@
                 align-items: flex-start;
             }
             div{
-                h2{
+                h3{
                     font-weight: 600;
                 }
             }
+        }
+        .decentralized_cards_each:hover {
+            background-color: $light-purple;
         }
     }
 }
 
 
+.home_how{
+    margin-bottom: 10rem;
+    &_div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &_each{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            transition: $transition;
+            padding: 2rem;
+            border-radius: 20px;
+
+            &_image{
+                width: 5rem;
+                height: 5rem;
+                border-radius: 50%;
+                background-color: $purple;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &_text{
+                h3{
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+                p{
+                    font-size: .8rem;
+                    text-align: center;
+                }
+            }
+        }
+        &_each:hover {
+            background-color: $light-purple;
+        }
+    }
+}
+
+.home_ready{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    button{
+        width: fit-content;
+    }
+}
+
+.home_ready_cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 5rem;
+
+    .home_ready_cards_business{
+        border-radius: 20px;
+        background-color: $light-purple;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        box-shadow: 13px 8px 50px -8px rgba(0,0,0,0.1),-13px -8px 50px -8px rgba(0,0,0,0.1);
+
+        .home_ready_cards_text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1rem;
+
+            &_image{
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background-color: $purple;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &_text{
+                h3{
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    font-size: .9rem;
+                    margin-top: 3rem;
+                }
+            }
+        }
+        .home_ready_cards_image{
+            width: 300px;
+        }
+    }
+}
 
 
 // media queries
-
+@media screen and (max-width: 1500px) {
+    .home_ready_cards{
+        .home_ready_cards_business{
+            .home_ready_cards_text{
+                &_text {
+                    p{
+                        width: 500px;
+                    }
+                }
+            }
+        }
+    }
+}
 @media screen and  (max-width: 1300px){
     .t_collab{
         width: 1000px;
@@ -180,6 +320,17 @@
     .lightweight_small_cards{
         display: flex;
         flex-direction: column;
+    }
+    .home_ready_cards{
+        .home_ready_cards_business{
+            .home_ready_cards_text{
+                &_text {
+                    p{
+                        width: 300px;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -191,6 +342,34 @@
         }
         .decentralized_cards{
             width: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .home_ready{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 0;
+
+        button{
+            align-self: flex-end;
+        }
+    }
+    .home_ready_cards{
+        .home_ready_cards_business{
+            flex-direction: column;
+            .home_ready_cards_text{
+                &_text{
+                    p{
+                        width: 300px;
+                    }
+                }
+            }
+            .home_ready_cards_image{
+                width: 300px;
+            }
         }
     }
 }
@@ -240,6 +419,9 @@
         p{
             width: 20rem;
         }
+    }
+    .home_ready_cards{
+        flex-direction: column;
     }
 }
 

@@ -14,6 +14,12 @@ import leaf from "../../assets/home/leaf.svg"
 import doorOpen from "../../assets/home/door-open.svg";
 import shieldCheck from "../../assets/home/shield-check .svg"
 import code from "../../assets/home/code.svg";
+import userPen from "../../assets/home/user-pen.svg";
+import upload from "../../assets/home/upload.svg";
+import link from "../../assets/home/link.svg";
+import user from "../../assets/home/user-tie-hair.svg";
+import building from "../../assets/home/buildings.svg";
+import frame from "../../assets/home/Frame.svg";
 
 
 const NavLink = lazy(() => import("../../components/NavLink/NavLink"));
@@ -164,7 +170,7 @@ const Home = () => {
                 <img src={doorOpen} alt="stuff" />
               </div>
               <div>
-                <h2>Private by design</h2>
+                <h3>Private by design</h3>
                 <p>We believe data privacy is a human right, which is why Deupload is built on a decentralized architecture that makes data breaches a thing of the past.</p>
               </div>
             </div>
@@ -173,7 +179,7 @@ const Home = () => {
               <img src={shieldCheck} alt="stuff" />
             </div>
               <div>
-                <h2>Distributed network</h2>
+                <h3>Distributed network</h3>
                 <p>An object is never in one place. Data is split into 80 pieces, and distributed to uncorrelated Nodes. When you call for the data, it is automatically reconstituted in an instant.</p>
               </div>
             </div>
@@ -182,7 +188,7 @@ const Home = () => {
               <img src={code} alt="stuff" />
             </div>
               <div>
-                <h2>Worldwide availability</h2>
+                <h3>Worldwide availability</h3>
                 <p>Data is stored on Nodes that are selected by reputation and local latency. The fastest Nodes from this set are chosen to store pieces, ensuring quick access to your data.</p>
               </div>
             </div>
@@ -190,6 +196,85 @@ const Home = () => {
 
          </section>
 
+        <section className="home_how flex flex-col items-center justify-center gap-16">
+          <TextHeader
+            header="How it works?"
+            text="Deupload removes complexity and offers a simple interface that allows users to take advantage of the vast array of decentralized storage with better security, performance, and pricing."
+          />
+
+          <article className="home_how_div flex flex-col justify-center items-center gap-8">
+            <div className="home_how_div_each">
+                <div className="home_how_div_each_image">
+                  <img src={userPen} alt="user Pen" />
+                </div>
+                <div className="home_how_div_each_text">
+                  <h3>Create an account</h3>
+                  <p>Create an Deupload account and start uploading your files to Decentralized Storage.</p>
+                </div>
+            </div>
+            <div className="home_how_div_each">
+                <div className="home_how_div_each_image">
+                  <img src={upload} alt="upload" />
+                </div>
+                <div className="home_how_div_each_text">
+                  <h3>Upload your files</h3>
+                  <p>Your file is encrypted and split into pieces then distributed to the nodes around the world.</p>
+                </div>
+            </div>
+            <div className="home_how_div_each">
+                <div className="home_how_div_each_image">
+                  <img src={link} alt="link" />
+                </div>
+                <div className="home_how_div_each_text">
+                  <h3>Share file instantly</h3>
+                  <p>Send your file via email or shareable link with password protect and expiration time.</p>
+                </div>
+            </div>
+          </article>
+
+        </section>
+
+        <div className="home_ready container mx-auto">
+          <div>
+            <h1 className="h1_header">Ready to get started?</h1>
+            <p>File storage and sharing on decentralized storage that suits any business size.</p>
+          </div>
+          <button className="purple_btn">Create an account</button>
+        </div>
+
+        <section className="home_ready_cards container mx-auto">
+          <SmallCard
+                backgroundColor="#651FFF"
+                circleColor="#FFFFFF"
+                image={user}
+                header="Are you and individual?"
+                headerColor="#ECECFE"
+                text="Syncing, backing up, and sharing your photos, videos and documents in total privacy couldn’t be easier."
+                textColor="#fff"
+                link="Start now"
+                linkColor="#fff"
+                height="320px"
+              />
+
+            <div className="home_ready_cards_business">
+
+              <div className="home_ready_cards_text">
+                <div className="home_ready_cards_text_image">
+                  <img src={building} alt="image" />
+                </div>
+                <div className="home_ready_cards_text_text">
+                  <h3 className="purple_text">Are you a business?</h3>
+                  <p className="purple_text">Work efficiently with teammates and clients, stay in sync on projects, and keep company data safe—all in one place on decentralized network.</p>
+                  <div className="purple_text">See pricing <IoIosArrowRoundForward /></div>
+                </div>
+              </div>
+
+              <div className="home_ready_cards_image">
+                <img src={frame} alt="frame" />
+              </div>
+            </div>
+
+        </section>
         <Footer />
     </div>
   )
