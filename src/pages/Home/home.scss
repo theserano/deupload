@@ -9,6 +9,9 @@
     gap: 2rem;
     margin-top: 5rem;
     padding: 2rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    transition-delay: 1s;
 
     h1{
         width: 55rem;
@@ -297,6 +300,13 @@
         }
     }
 }
+
+
+// scroll styles
+.headerView{
+    opacity: 1;
+}
+
 
 
 // media queries

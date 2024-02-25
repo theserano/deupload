@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 const NavLink = () => {
   const [navMenu, setNavMenu] = useState(false);
   const [display, setDisplay] = useState(false);
-  console.log(display)
 
   const checkWindowSize = () => {
     const windowWidth = window.innerWidth;

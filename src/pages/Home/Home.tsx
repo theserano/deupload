@@ -1,4 +1,4 @@
-import { lazy } from "react"
+import { lazy, useEffect, useRef, useState } from "react"
 import "./home.scss";
 import "../../styles/generic.scss";
 import home_header_picture from "../../assets/home/home_header_picture.svg";
@@ -30,11 +30,51 @@ const SmallCard = lazy(() => import("../../components/card/SmallCard"))
 
 
 const Home = () => {
+
+  const headerRef = useRef(null);
+  const cardRef = useRef(null);
+  const [headerIntersecting, setHeaderIntersecting] = useState(false);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+    }
+
+    const headerRefCurrent = headerRef.current; 
+    const cardRefCurrent = cardRef.current;
+  
+    if(headerRefCurrent !== null && cardRefCurrent != null){
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === headerRefCurrent) {
+            setHeaderIntersecting(entry.isIntersecting);
+          }
+        });
+      }, options);
+    
+      if (headerRefCurrent) {
+        observer.observe(headerRefCurrent);
+      }
+    
+      return () => {
+        if (headerRefCurrent) {
+          observer.unobserve(headerRefCurrent);
+        }
+      };
+
+    }
+
+  }, [headerRef]);
+  
+
   return (
     <div>
         <NavLink />
 
-        <header className="home_header">
+        <header className={`home_header ${headerIntersecting ? 'headerView' : ''}`} ref={headerRef}>
           <h1 className="h1_header">File storage and sharing for remote teams that work together on <span className="purple_text">Web3</span></h1>
           <p>Deupload is a online file manager on decentralized cloud storage and IPFS that allows you storage, share, collect files privately and team collaboration without subscription. </p>
           <div className="btn_group">
@@ -47,6 +87,7 @@ const Home = () => {
           <img src={home_header_picture} alt="picture" />
         </div>
 
+       
         <section className="home_lightening">
 
           <TextHeader 
@@ -54,7 +95,7 @@ const Home = () => {
             header="Lightning fast. Better privacy. Fairer cost."
           />
 
-            <div className="home_lightening_cards">
+            <div className={`home_lightening_cards`} ref={cardRef}>
 
               <SmallCard
               backgroundColor="#651FFF"
